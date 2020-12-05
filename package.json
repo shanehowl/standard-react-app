@@ -24,6 +24,19 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x} --color"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{json,md,html,ts,tsx,scss,css,json}": [
+      "prettier --write"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -55,7 +68,9 @@
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
     "install-peerdeps": "^2.0.3",
+    "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "ts-jest": "^26.4.4"
   }
