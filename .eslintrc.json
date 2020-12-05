@@ -17,10 +17,12 @@
   "rules": {
     "camelcase": [
       "error",
-      { "properties": "always" },
-      { "ignoreDestructuring": "true" },
-      { "ignoreImports": "true" },
-      { "ignoreGlobals": "true" }
+      {
+        "properties": "always",
+        "ignoreDestructuring": true,
+        "ignoreImports": true,
+        "ignoreGlobals": true
+      }
     ],
     "no-unused-vars": [
       "error",
