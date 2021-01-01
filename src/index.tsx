@@ -10,15 +10,18 @@ import Crud from './pages/crud'
 // Styles
 import './styles/index.css'
 
+// Utilities
+import { ReduxProvider } from './utilities/redux/redux'
+
 ReactDOM.render(
-  <React.StrictMode>
+  <ReduxProvider>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/crud" component={Crud} />
       </Switch>
     </BrowserRouter>
-  </React.StrictMode>,
+  </ReduxProvider>,
   document.getElementById('root')
 )
 
