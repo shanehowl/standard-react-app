@@ -13,7 +13,7 @@ module.exports = function (plop) {
       const actions = []
       actions.push({
         type: 'add',
-        path: 'src/pages/{{lowerCase name}}/index.ts',
+        path: 'src/pages/{{lowerCase name}}/index.tsx',
         templateFile: 'src/plop/templates/page/index.tsx.hbs',
       })
       actions.push({
