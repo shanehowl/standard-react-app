@@ -1,6 +1,7 @@
+import { FC } from 'react'
 import './crud.css'
 
-const Crud = () => {
+const Crud: FC = () => {
   return <div>Crud page created successfully</div>
 }
 

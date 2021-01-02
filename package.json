@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,6 +11,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "antd": "^4.9.4",
+    "craco-less": "^1.17.1",
     "env-cmd": "^10.1.0",
     "history": "^5.0.0",
     "lodash": "^4.17.20",
@@ -26,9 +29,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "echo '#NODE_ENV='${NODE_ENV:=development}'' && env-cmd -f ./environments/${NODE_ENV}/.env.${NODE_ENV}.local react-scripts start",
-    "build": "echo '#NODE_ENV='${NODE_ENV:=production}'' && env-cmd -f ./environments/${NODE_ENV}/.env.${NODE_ENV} react-scripts build",
-    "test": "react-scripts test",
+    "start": "echo '#NODE_ENV='${NODE_ENV:=development}'' && env-cmd -f ./environments/${NODE_ENV}/.env.${NODE_ENV}.local craco start",
+    "build": "echo '#NODE_ENV='${NODE_ENV:=production}'' && env-cmd -f ./environments/${NODE_ENV}/.env.${NODE_ENV} craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x} --color",

@@ -8,7 +8,7 @@ import Home from './pages/home'
 import Crud from './pages/crud'
 
 // Styles
-import './styles/index.css'
+import './styles/index.less'
 
 // Utilities
 import { ReduxProvider } from './utilities/redux/redux'

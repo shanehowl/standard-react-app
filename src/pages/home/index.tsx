@@ -1,11 +1,14 @@
+import { FC } from 'react'
+import { Button } from 'antd'
 import logo from '../../assets/images/logo.svg'
 import './home.css'
 
-function Home() {
+const Home: FC = () => {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Button type="primary">Button</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
