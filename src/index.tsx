@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals'
 
 // Pages
 import Home from './pages/home'
-import Crud from './pages/crud'
 
 // Styles
 import './styles/index.less'
@@ -17,8 +16,7 @@ ReactDOM.render(
   <ReduxProvider>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/crud" component={Crud} />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   </ReduxProvider>,
