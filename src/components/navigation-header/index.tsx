@@ -27,21 +27,30 @@ const NavigationHeader: FC<NavigationHeaderProp> = ({
   )
   return (
     <>
-      <Row>
+      <Row align="middle" justify="space-between">
         <Col span={3}>
-          <Link to="/">
+          <Link to="/" className="navigation-header__link">
             <Title level={3}>{title}</Title>
           </Link>
         </Col>
         <Col span={11} />
         <Col span={10}>
-          <Menu onClick={onMenuClick} selectedKeys={[currentMenu]} mode="horizontal">
-            <Menu.Item key="features">Features</Menu.Item>
-            <Menu.Item key="crud">Basic CRUD</Menu.Item>
-            <Button type={btnType} size={btnSize}>
-              Login
-            </Button>
-          </Menu>
+          <Row justify="end">
+            <Col>
+              <Menu
+                className="navigation-header__menu"
+                onClick={onMenuClick}
+                selectedKeys={[currentMenu]}
+                mode="horizontal"
+              >
+                <Menu.Item key="features">Features</Menu.Item>
+                <Menu.Item key="crud">Basic CRUD</Menu.Item>
+                <Button type={btnType} size={btnSize}>
+                  Login
+                </Button>
+              </Menu>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </>

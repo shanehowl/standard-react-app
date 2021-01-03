@@ -7,16 +7,16 @@ import Landing from '../landing'
 import Features from '../features'
 import Crud from '../crud'
 
-import './home.css'
+import './home.less'
 
 const Home: FC = () => {
   const { Header, Content, Footer } = Layout
   return (
     <Layout>
-      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+      <Header className="layout__header">
         <NavigationHeader title="R Base" />
       </Header>
-      <Content className="site-layout" style={{ padding: '0 64px', marginTop: 64 }}>
+      <Content className="layout__content">
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/features" component={Features} />
