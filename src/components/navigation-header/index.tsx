@@ -28,13 +28,12 @@ const NavigationHeader: FC<NavigationHeaderProp> = ({
   return (
     <>
       <Row align="middle" justify="space-between">
-        <Col span={3}>
+        <Col xs={20} sm={4} md={4} lg={4} xl={4}>
           <Link to="/" className="navigation-header__link">
             <Title level={3}>{title}</Title>
           </Link>
         </Col>
-        <Col span={11} />
-        <Col span={10}>
+        <Col xs={3} sm={19} md={19} lg={19} xl={19}>
           <Row justify="end">
             <Col>
               <Menu
@@ -45,12 +44,14 @@ const NavigationHeader: FC<NavigationHeaderProp> = ({
               >
                 <Menu.Item key="features">Features</Menu.Item>
                 <Menu.Item key="crud">Basic CRUD</Menu.Item>
-                <Button type={btnType} size={btnSize}>
-                  Login
-                </Button>
               </Menu>
             </Col>
           </Row>
+        </Col>
+        <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+          <Button type={btnType} size={btnSize}>
+            Login
+          </Button>
         </Col>
       </Row>
     </>
