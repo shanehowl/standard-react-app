@@ -10,7 +10,7 @@ import Crud from '../crud'
 import './home.less'
 
 const Home: FC = () => {
-  const { Header, Content, Footer } = Layout
+  const { Header, Content } = Layout
   return (
     <Layout>
       <Header className="layout__header">
@@ -23,7 +23,6 @@ const Home: FC = () => {
           <Route path="/crud" component={Crud} />
         </Switch>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>React Boilerplate ©2021 Created by Shane</Footer>
     </Layout>
   )
 }

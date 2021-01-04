@@ -4,4 +4,5 @@ export interface FEATURE_DETAIL {
   icon: string
   title: string
   description: string
+  link: string
 }

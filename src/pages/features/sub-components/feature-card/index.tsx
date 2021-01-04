@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
 import { Row, Col, Typography, Image } from 'antd'
 import './feature-card.less'
 import { FEATURE_DETAIL } from '../../modal'
@@ -56,10 +56,13 @@ const Body: FC<{ title: string; icon: string; description: string }> = ({
  *
  */
 const FeatureCard: FC<{ feature: FEATURE_DETAIL }> = ({ feature }) => {
-  const { headerTitle, headerColor, title, icon, description } = feature
+  const { headerTitle, headerColor, title, icon, description, link } = feature
+  const onFeatureSelect = useCallback(() => {
+    window.open(link)
+  }, [link])
   return (
     <Row>
-      <Col span={24} className="feature-card">
+      <Col span={24} className="feature-card" onClick={onFeatureSelect}>
         <Header headerTitle={headerTitle} headerColor={headerColor} />
         <Body title={title} icon={icon} description={description} />
       </Col>

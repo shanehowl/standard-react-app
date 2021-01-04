@@ -13,6 +13,7 @@ export const FEATURE_LIST: FEATURE_DETAIL[] = [
     icon: AntDesignLogo,
     title: 'Ant Design',
     description: '',
+    link: 'https://ant.design/',
   },
   {
     headerTitle: 'State Management',
@@ -20,6 +21,7 @@ export const FEATURE_LIST: FEATURE_DETAIL[] = [
     icon: ReduxLogo,
     title: 'Redux',
     description: '',
+    link: 'https://redux.js.org/',
   },
   {
     headerTitle: 'Authentication',
@@ -27,6 +29,7 @@ export const FEATURE_LIST: FEATURE_DETAIL[] = [
     icon: OktaLogo,
     title: 'Okta',
     description: '',
+    link: 'https://www.okta.com/',
   },
   {
     headerTitle: 'Unit Test',
@@ -34,6 +37,7 @@ export const FEATURE_LIST: FEATURE_DETAIL[] = [
     icon: JestLogo,
     title: 'Jest',
     description: '',
+    link: 'https://jestjs.io/',
   },
   {
     headerTitle: 'Utilities: Git Hooks',
@@ -41,6 +45,7 @@ export const FEATURE_LIST: FEATURE_DETAIL[] = [
     icon: UtilityLogo,
     title: 'Husky',
     description: '',
+    link: 'https://github.com/typicode/husky',
   },
   {
     headerTitle: 'Utilities: File creation',
@@ -48,5 +53,6 @@ export const FEATURE_LIST: FEATURE_DETAIL[] = [
     icon: UtilityLogo,
     title: 'Plop',
     description: '',
+    link: 'https://plopjs.com/',
   },
 ]

@@ -13,8 +13,14 @@ const Landing: FC = () => {
   const { Title, Paragraph } = Typography
   return (
     <>
-      <Row align="middle" justify="space-between" gutter={16} className="landing-page">
-        <Col span={10}>
+      <Row align="middle" justify="space-between" gutter={[16, 16]} className="landing-page">
+        <Col
+          xs={{ order: 3, span: 24 }}
+          sm={{ order: 3, span: 24 }}
+          md={{ order: 1, span: 11 }}
+          lg={{ order: 1, span: 10 }}
+          xl={{ order: 1, span: 10 }}
+        >
           <Row>
             <Col>
               <Title className="left-section__title" level={1}>
@@ -39,13 +45,25 @@ const Landing: FC = () => {
             </Col>
           </Row>
         </Col>
-        <Col span={4} />
-        <Col span={10}>
+        <Col
+          xs={{ order: 2, span: 0 }}
+          sm={{ order: 2, span: 0 }}
+          md={{ order: 2, span: 2 }}
+          lg={{ order: 2, span: 4 }}
+          xl={{ order: 2, span: 4 }}
+        />
+        <Col
+          xs={{ order: 1, span: 24 }}
+          sm={{ order: 1, span: 24 }}
+          md={{ order: 3, span: 11 }}
+          lg={{ order: 3, span: 10 }}
+          xl={{ order: 3, span: 10 }}
+        >
           <Row>
             <Col>
               <Avatar
                 className="right-section__avatar"
-                size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 220, xxl: 100 }}
+                size={{ xs: 130, sm: 150, md: 180, lg: 200, xl: 220, xxl: 220 }}
                 src={ReactLogo}
               />
             </Col>
@@ -54,7 +72,7 @@ const Landing: FC = () => {
             <Col>
               <Avatar
                 className="right-section__avatar"
-                size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 120, xxl: 100 }}
+                size={{ xs: 80, sm: 90, md: 100, lg: 120, xl: 120, xxl: 220 }}
                 src={AntDesignLogo}
               />
             </Col>

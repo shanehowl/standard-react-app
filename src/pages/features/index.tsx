@@ -16,7 +16,7 @@ const Features: FC = () => {
     <>
       <Row align="middle" justify="end" gutter={16} className="feature-page">
         <Col>
-          <Title className="landing-page__title" level={1}>
+          <Title className="feature-page__title" level={1}>
             Features
           </Title>
         </Col>
