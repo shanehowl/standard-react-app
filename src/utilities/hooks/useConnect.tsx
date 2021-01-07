@@ -4,7 +4,7 @@ import { useCallback, useMemo } from 'react'
 
 //* loop through the state in each reducer & return the value based on accessor path.
 // eslint-disable-next-line import/prefer-default-export
-export const useStateWithPaths = (statePaths = []) => {
+export const useStateWithPaths = (statePaths = ['']) => {
   const paths = useMemo(() => statePaths, [...statePaths])
   const selector = useCallback(
     (state) => {

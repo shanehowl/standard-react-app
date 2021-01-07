@@ -11,7 +11,9 @@ import './styles/index.less'
 
 // Utilities
 import { ReduxProvider } from './utilities/redux/redux'
+import { setup } from './services'
 
+setup()
 ReactDOM.render(
   <ReduxProvider>
     <BrowserRouter>
