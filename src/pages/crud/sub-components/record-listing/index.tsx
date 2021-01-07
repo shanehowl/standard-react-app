@@ -1,10 +1,13 @@
-import { FC, useCallback } from 'react'
+import _ from 'lodash'
+import { FC, useCallback, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { Row, Col, Typography, Button, Space, Table } from 'antd'
 import { useStateWithPaths } from '../../../../utilities/hooks/useConnect'
 import { retrieveAvailableBooks } from '../../../../redux/actions/action_crud_page'
 
 import './record-listing.less'
+import { TABLE_COLS_CONFIG } from '../../config'
+import { TableCols } from '../../../../modals/crud'
 
 /**
  *
@@ -19,34 +22,39 @@ const RecordListing: FC = () => {
   const onApiRetrieve = useCallback(() => {
     dispatch(retrieveAvailableBooks())
   }, [dispatch])
-  const columns = [
-    {
-      title: 'No',
-      dataIndex: 'id',
-      key: 'id',
-      render: (text: string) => <span>{text}</span>,
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'No of items',
-      dataIndex: 'noOfItems',
-      key: 'noOfItems',
-    },
-    {
+
+  const onEdit = useCallback(() => {
+    return null
+  }, [dispatch])
+
+  const onDelete = useCallback(() => {
+    return null
+  }, [dispatch])
+
+  const columns = useMemo(() => {
+    const recordColumns = _.map(TABLE_COLS_CONFIG, (col: TableCols) => {
+      return {
+        title: col.title,
+        dataIndex: col.accessor,
+        key: col.accessor,
+      }
+    })
+    const actionColumn = {
       title: '',
       key: 'action',
       render: () => (
-        <Space size="middle">
-          <span>edit</span>
-          <span>delete</span>
+        <Space align="end">
+          <Button type="default" onClick={onEdit}>
+            Edit
+          </Button>
+          <Button type="default" onClick={onDelete}>
+            Delete
+          </Button>
         </Space>
       ),
-    },
-  ]
+    }
+    return [...recordColumns, actionColumn]
+  }, [])
 
   return (
     <>

@@ -10,3 +10,9 @@ export interface RetrieveBooksAction {
   type: typeof RETRIEVE_BOOKS
   payload: Book[]
 }
+
+export interface TableCols {
+  title: string
+  accessor: string
+  sortable: boolean
+}
