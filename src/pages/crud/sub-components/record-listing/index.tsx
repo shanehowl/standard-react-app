@@ -1,9 +1,10 @@
 import _ from 'lodash'
 import { FC, useCallback, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory, useLocation } from 'react-router'
 import { Row, Col, Typography, Button, Space, Table } from 'antd'
 import { useStateWithPaths } from '../../../../utilities/hooks/useConnect'
-import { retrieveAvailableBooks } from '../../../../redux/actions/action_crud_page'
+import { deleteBook, retrieveAvailableBooks } from '../../../../redux/actions/action_crud_page'
 
 import './record-listing.less'
 import { TABLE_COLS_CONFIG } from '../../config'
@@ -16,6 +17,8 @@ import { TableCols } from '../../../../modals/crud'
  */
 const RecordListing: FC = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
+  const { pathname } = useLocation<{ pathname: string }>()
   const { Title } = Typography
   const [booksRecord = []] = useStateWithPaths([`crudPageReducer.booksRecord`])
 
@@ -23,13 +26,28 @@ const RecordListing: FC = () => {
     dispatch(retrieveAvailableBooks())
   }, [dispatch])
 
-  const onEdit = useCallback(() => {
-    return null
-  }, [dispatch])
+  const onAddEntry = useCallback(() => {
+    history.push({
+      pathname: `${pathname}/entry`,
+    })
+  }, [history, pathname])
 
-  const onDelete = useCallback(() => {
-    return null
-  }, [dispatch])
+  const onEdit = useCallback(
+    (id: string) => {
+      history.push({
+        pathname: `${pathname}/entry`,
+        search: `?id=${id}`,
+      })
+    },
+    [history, pathname]
+  )
+
+  const onDelete = useCallback(
+    (id: string) => {
+      dispatch(deleteBook(id))
+    },
+    [dispatch]
+  )
 
   const columns = useMemo(() => {
     const recordColumns = _.map(TABLE_COLS_CONFIG, (col: TableCols) => {
@@ -42,12 +60,12 @@ const RecordListing: FC = () => {
     const actionColumn = {
       title: '',
       key: 'action',
-      render: () => (
+      render: ({ id = '' }) => (
         <Space align="end">
-          <Button type="default" onClick={onEdit}>
+          <Button type="default" onClick={() => onEdit(id)}>
             Edit
           </Button>
-          <Button type="default" onClick={onDelete}>
+          <Button type="default" onClick={() => onDelete(id)}>
             Delete
           </Button>
         </Space>
@@ -55,7 +73,6 @@ const RecordListing: FC = () => {
     }
     return [...recordColumns, actionColumn]
   }, [])
-
   return (
     <>
       <Row>
@@ -70,7 +87,9 @@ const RecordListing: FC = () => {
           <Row align="middle" justify="start" gutter={[0, 18]}>
             <Col span={24} className="record-listing__btn-group">
               <Space size={16} className="record-listing__spacer">
-                <Button type="primary">Add entry</Button>
+                <Button type="primary" onClick={onAddEntry}>
+                  Add entry
+                </Button>
                 <Button type="default" onClick={onApiRetrieve}>
                   Retrieve entry from API
                 </Button>
@@ -78,7 +97,7 @@ const RecordListing: FC = () => {
             </Col>
           </Row>
           <Row>
-            <Col span={24}>
+            <Col span={24} className="record-listing__table">
               <Table columns={columns} dataSource={booksRecord} rowKey="id" />
             </Col>
           </Row>

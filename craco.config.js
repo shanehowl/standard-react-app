@@ -21,6 +21,7 @@ module.exports = {
               '@btn-default-bg': '#EEE7FD',
               '@btn-default-border': '#EEE7FD',
               '@card-radius': '8px',
+              '@table-border-radius-base': '0',
             },
             javascriptEnabled: true,
           },

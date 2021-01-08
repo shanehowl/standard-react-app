@@ -12,3 +12,8 @@ export const appendIdToObject = (object = {}, prefix = '') => {
     id: uniqueId(prefix),
   }
 }
+
+//* reverse truncate string
+export const reverseSliceByCharacter = (string: string, characterAt: string) => {
+  return string.slice(-string.indexOf(characterAt) - 1)
+}
