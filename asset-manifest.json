@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/standard-react-app/static/css/main.dd27a61e.chunk.css",
+    "main.js": "/standard-react-app/static/js/main.1afc52f0.chunk.js",
+    "main.js.map": "/standard-react-app/static/js/main.1afc52f0.chunk.js.map",
+    "runtime-main.js": "/standard-react-app/static/js/runtime-main.76ac8d1a.js",
+    "runtime-main.js.map": "/standard-react-app/static/js/runtime-main.76ac8d1a.js.map",
+    "static/js/2.cbd14ceb.chunk.js": "/standard-react-app/static/js/2.cbd14ceb.chunk.js",
+    "static/js/2.cbd14ceb.chunk.js.map": "/standard-react-app/static/js/2.cbd14ceb.chunk.js.map",
+    "static/js/3.b1d3effd.chunk.js": "/standard-react-app/static/js/3.b1d3effd.chunk.js",
+    "static/js/3.b1d3effd.chunk.js.map": "/standard-react-app/static/js/3.b1d3effd.chunk.js.map",
+    "index.html": "/standard-react-app/index.html",
+    "static/css/main.dd27a61e.chunk.css.map": "/standard-react-app/static/css/main.dd27a61e.chunk.css.map",
+    "static/js/2.cbd14ceb.chunk.js.LICENSE.txt": "/standard-react-app/static/js/2.cbd14ceb.chunk.js.LICENSE.txt",
+    "static/media/antd-logo.9cc2dd29.svg": "/standard-react-app/static/media/antd-logo.9cc2dd29.svg",
+    "static/media/jest-logo.ce310074.svg": "/standard-react-app/static/media/jest-logo.ce310074.svg",
+    "static/media/okta-logo.cf0de8d7.svg": "/standard-react-app/static/media/okta-logo.cf0de8d7.svg",
+    "static/media/react-logo.144f9141.svg": "/standard-react-app/static/media/react-logo.144f9141.svg",
+    "static/media/redux-logo.65d9a37b.svg": "/standard-react-app/static/media/redux-logo.65d9a37b.svg",
+    "static/media/utility-logo.3c1e9e2d.svg": "/standard-react-app/static/media/utility-logo.3c1e9e2d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76ac8d1a.js",
+    "static/js/2.cbd14ceb.chunk.js",
+    "static/css/main.dd27a61e.chunk.css",
+    "static/js/main.1afc52f0.chunk.js"
+  ]
+}
