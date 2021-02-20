@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
+import { useHistory } from 'react-router'
 import { Row, Col, Typography, Button, Space, Avatar } from 'antd'
 import ReactLogo from '../../assets/images/react-logo.svg'
 import AntDesignLogo from '../../assets/images/antd-logo.svg'
@@ -10,6 +11,13 @@ import './landing.less'
  *
  */
 const Landing: FC = () => {
+  const history = useHistory()
+  const onRedirect = useCallback(
+    (route: string) => {
+      history.push(route)
+    },
+    [history]
+  )
   const { Title, Paragraph } = Typography
   return (
     <>
@@ -35,10 +43,10 @@ const Landing: FC = () => {
           <Row justify="end">
             <Col>
               <Space size={24}>
-                <Button href="/features" type="default">
+                <Button onClick={() => onRedirect('/features')} type="default">
                   View more features
                 </Button>
-                <Button href="/crud" type="primary">
+                <Button onClick={() => onRedirect('/crud')} type="primary">
                   Simulate CRUD
                 </Button>
               </Space>

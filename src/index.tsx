@@ -16,7 +16,7 @@ import { setup } from './services'
 setup()
 ReactDOM.render(
   <ReduxProvider>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.REACT_APP_BASE_URL}>
       <Switch>
         <Route path="/" component={Home} />
       </Switch>
