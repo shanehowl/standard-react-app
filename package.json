@@ -93,5 +93,6 @@
     "plop": "^2.7.4",
     "prettier": "^2.2.1",
     "ts-jest": "^26.4.4"
-  }
+  },
+  "homepage": "https://shanehowl.github.io/standard-react-app/"
 }
