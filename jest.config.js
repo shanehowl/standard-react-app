@@ -5,6 +5,7 @@ const config = {
   name: 'standard-react-app',
   verbose: false,
   testRegex: '.test.tsx',
+  collectCoverage: true,
   transform: { '^.+\\.(ts|tsx|js|jsx)?$': 'ts-jest' },
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{js,jsx,ts,tsx}',
